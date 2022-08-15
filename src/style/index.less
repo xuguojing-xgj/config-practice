@@ -51,6 +51,29 @@ body {
                 position: absolute;
             }
         }
+
+        #food {
+            width: 10px;
+            height: 10px;
+            // 开启绝对定位
+            position: absolute;
+            left: 40px;
+            top: 100px;
+
+            display: flex;
+            flex-flow: row wrap;
+            // 设置主轴 和 侧轴 的空白
+            justify-content: space-between;
+            align-content: space-between;
+
+            &>div {
+                width: 4px;
+                height: 4px;
+                background-color: black;
+                // div旋转45deg
+                transform: rotate(45deg);
+            }
+        }
     }
 
     // 记分牌
