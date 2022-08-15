@@ -37,7 +37,27 @@ class Food {
     }
 }
 
-const food = new Food()
-console.log(food.X, food.Y);
-food.change()
-console.log(food.X, food.Y);
+// const food = new Food()
+// console.log(food.X, food.Y);
+// food.change()
+// console.log(food.X, food.Y);
+
+// 定义记分牌 的类
+class ScorePanel {
+    // 计分 和 等级
+    score = 0;
+    level = 1;
+    // 分数和等级的元素 在构造函数中初始化
+    scoreEle: HTMLElement;
+    levelEle: HTMLElement;
+    constructor() {
+        this.scoreEle = document.getElementById('score')!;
+        this.levelEle = document.getElementById('level')!;
+    }
+
+    // 设置一个加分的方法
+    addSscore() {
+        // 使分数自增
+        this.scoreEle.innerHTML = ++this.score + '';
+    }
+}
