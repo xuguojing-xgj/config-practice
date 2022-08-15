@@ -65,6 +65,16 @@ module.exports = {
                 ],
                 // 要排除的文件
                 exclude: /node_modules/
+            },
+            // 设置less 文件处理
+            {
+                test: /\.less$/,
+                // use 执行顺序是按从下到上执行
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
             }
         ]
     },
