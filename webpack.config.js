@@ -73,6 +73,23 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
+                    // 引入postcss 解决样式兼容低版本浏览器 核心问题
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        'postcss-preset-env',
+                                        {
+                                            // 兼容最新的2个浏览器
+                                            browsers:'last 2 versions'
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    },
                     'less-loader'
                 ]
             }
