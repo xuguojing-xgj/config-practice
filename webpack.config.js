@@ -23,9 +23,9 @@ module.exports = {
          * 不使用 打包后 不使用箭头函数
          */
         environment: {
-            // 不使用箭头函数
+            // 在打包后的文件 不使用箭头函数
             arrowFunction: false,
-            // 不使用cosnt
+            // 在打包后的文件 不使用cosnt
             const: false,
         }
     },
