@@ -36,6 +36,21 @@ body {
         width: 304px;
         height: 304px;
         border: 2px solid #000;
+        // 开启相对定位
+        position: relative;
+
+        #snake {
+
+            // 设置蛇样式
+            &>div {
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border: 1px solid @bg-color;
+                // 开启绝对定位
+                position: absolute;
+            }
+        }
     }
 
     // 记分牌
