@@ -31,15 +31,13 @@ class Food {
         let top = Math.round(Math.random() * 29) * 10
         let left = Math.round(Math.random() * 29) * 10
 
-        this.element.style.top = left + 'px'
+        this.element.style.top = top + 'px'
         this.element.style.left = left + 'px'
 
     }
 }
 
 const food = new Food()
-console.log(food.X);
-console.log(food.Y);
+console.log(food.X, food.Y);
 food.change()
-console.log(food.X);
-console.log(food.Y);
+console.log(food.X, food.Y);
