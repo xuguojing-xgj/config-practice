@@ -23,7 +23,10 @@ module.exports = {
          * 不使用 打包后 不使用箭头函数
          */
         environment: {
+            // 不使用箭头函数
             arrowFunction: false,
+            // 不使用cosnt
+            const: false,
         }
     },
     mode: 'development',
@@ -83,7 +86,7 @@ module.exports = {
                                         'postcss-preset-env',
                                         {
                                             // 兼容最新的2个浏览器
-                                            browsers:'last 2 versions'
+                                            browsers: 'last 2 versions'
                                         }
                                     ]
                                 ]
