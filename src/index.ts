@@ -19,8 +19,27 @@ class Food {
     get Y() {
         return this.element.offsetTop;
     }
+
+    // 随机生成食物位置
+    change() {
+        /**
+         * 生成一个随机位置
+         * 食物位置最小是0, 最大是290 
+         * 蛇 移动一次是 10 一个大小 也是10 所以要求 食物每次移动 的坐标 都是整 10
+         */
+
+        let top = Math.round(Math.random() * 29) * 10
+        let left = Math.round(Math.random() * 29) * 10
+
+        this.element.style.top = left + 'px'
+        this.element.style.left = left + 'px'
+
+    }
 }
 
 const food = new Food()
+console.log(food.X);
+console.log(food.Y);
+food.change()
 console.log(food.X);
 console.log(food.Y);
