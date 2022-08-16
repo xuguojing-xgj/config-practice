@@ -3,9 +3,13 @@ class Snake {
     head: HTMLElement;
     // 蛇的身体(包括蛇头)
     bodies: HTMLCollection;
+
+    // 获取蛇容器
+    element: HTMLElement;
     constructor() {
+        this.element = document.getElementById('snake')!;
         this.head = document.querySelector('#snake > div') as HTMLElement;
-        this.bodies = document.getElementById('snake')!.getElementsByTagName('div')
+        this.bodies = this.element.getElementsByTagName('div');
     }
 
     // 获取蛇头X坐标
@@ -26,4 +30,12 @@ class Snake {
         this.head.style.top = value + ''
     }
 
+    // 增加蛇身的方法
+    addBody() {
+        // 像element 中添加div
+        this.element.insertAdjacentHTML("beforeend", "<div></div>")
+    }
+
 }
+
+export default Snake
