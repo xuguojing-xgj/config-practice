@@ -1,42 +1,43 @@
-//  定义食物类 Food
 class Food {
-    // 定义一个属性代表食物 对应的元素
-    element: HTMLElement;
+    element: HTMLElement
+
     constructor() {
-        // 获取页面 中的food 元素 并赋值给 element !表示food 元素一定存在
-        this.element = document.getElementById('food')!;
+        this.element = document.getElementById("food")!
     }
 
-    // 获取食物 X轴坐标的方法
+
+    // 定义一个获取食物X坐标的方法
     get X() {
         return this.element.offsetLeft;
     }
 
-    // 获取食物 Y轴坐标的方法
+    // 定义一个获取食物Y坐标的方法
     get Y() {
         return this.element.offsetTop;
     }
 
-    // 随机生成食物位置
-    change() {
-        /**
-         * 生成一个随机位置
-         * 食物位置最小是0, 最大是290 
-         * 蛇 移动一次是 10 一个大小 也是10 所以要求 食物每次移动 的坐标 都是整 10
-         */
-
-        let top = Math.round(Math.random() * 29) * 10
-        let left = Math.round(Math.random() * 29) * 10
-
-        this.element.style.top = top + 'px'
-        this.element.style.left = left + 'px'
+    change(snakeBody: HTMLCollection) {
+        // 生成食物的随机位置
+        // 食物的位置最小是0，最大是290px;(父级元素的宽为300)
+        // 食物的坐标必须为10的倍数，因为食物本身的宽度就是10px
+        let left: number = Math.round(Math.random() * 29) * 10
+        let top: number = Math.round(Math.random() * 29) * 10
+        // 食物不能出现在蛇的位置
+        let foodInSnake: boolean = false;
+        for (let i = 0; i < snakeBody.length; i++) {
+            let body = <HTMLElement>snakeBody[i];
+            if (left === body.offsetLeft && top === body.offsetTop) {
+                foodInSnake = true
+            }
+        }
+        if (foodInSnake) {
+            this.change(snakeBody);
+        } else {
+            this.element.style.left = left + 'px';
+            this.element.style.top = top + 'px';
+        }
 
     }
 }
 
-// const food = new Food()
-// console.log(food.X, food.Y);
-// food.change()
-// console.log(food.X, food.Y);
-
-export default Food
+export default Food;
