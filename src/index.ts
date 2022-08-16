@@ -2,9 +2,11 @@
 import './style/index.less'
 
 
-import Food from './modules/Foods'
+// import Food from './modules/Foods'
 
-const food = new Food()
-console.log(food.X, food.Y);
-food.change()
-console.log(food.X, food.Y);
+// const food = new Food()
+// console.log(food.X, food.Y);
+// food.change()
+// console.log(food.X, food.Y);
+import GameControl from './modules/GameControl'
+new GameControl()
