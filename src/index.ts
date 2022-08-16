@@ -9,4 +9,8 @@ import './style/index.less'
 // food.change()
 // console.log(food.X, food.Y);
 import GameControl from './modules/GameControl'
-new GameControl()
+const gamecontrol = new GameControl()
+// setInterval(() => {
+//     console.log(gamecontrol.direction);
+
+// }, 1000)
